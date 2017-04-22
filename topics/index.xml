@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>7coco Tech Blog</title>
+    <title>Topics on 7coco Tech Blog</title>
     <link>https://7coco.github.io/topics/</link>
-    <description>Recent content on 7coco Tech Blog</description>
+    <description>Recent content in Topics on 7coco Tech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
@@ -14,46 +14,20 @@
     
     <item>
       <title></title>
-      <link>https://7coco.github.io/about/</link>
+      <link>https://7coco.github.io/topics/</link>
       <pubDate>Sat, 22 Apr 2017 13:38:18 +0900</pubDate>
       
-      <guid>https://7coco.github.io/about/</guid>
-      <description>About me 誰？ 名前：7coco (ナナココ、もしくはセブンココ、もしくは単にココ)
-生年月日：1998年6月20日 (18歳)
-職業：Webエンジニア
-所属：株式会社マネーフォワード 開発推進本部
-twitter：@7__coco, GitHub：@7coco
-学歴 学芸大附属 =&amp;gt; 早稲田実業 =&amp;gt; N高等学校 =&amp;gt; マネーフォワードに就職
-どんなエンジニア？ プログラミング始めて1年です。
-JavaScript(Node.js), Ruby(Ruby on Rails)を書いてきて、就職して Java を始めました。
-FAQ 1. どうしてプログラミング始めたの？ なんか記事書く
-2. なんで大学行かなかったの？ なんか記事書くかも
-3. N高等学校って何？ ざっくり言うと、角川ドワンゴが作った2016年にはじめったネットの高校です。きちんと国の認可を受けた通信制高校で、一般的な高校と同じ高校卒業資格の取得が可能です。
-年に数日のスクーリングを除いて授業はすべてネット上で行われるため、一般的な高校と比べて圧倒的に自由な時間が得られるのがいいところ。学費も安い。
-詳しくはこちら 。
-4. バンタンプログラマーズハイレベルハイスクールって何？ 5. なんで 7coco なの？ GitHubのアカウントを学校でとったので、出席番号の7と本名の下の名前の湖々(ココ)をくっつけました。</description>
+      <guid>https://7coco.github.io/topics/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title></title>
-      <link>https://7coco.github.io/about/</link>
-      <pubDate>Sat, 22 Apr 2017 13:38:18 +0900</pubDate>
+      <title>Post</title>
+      <link>https://7coco.github.io/topics/post/</link>
+      <pubDate>Thu, 20 Apr 2017 09:01:39 +0900</pubDate>
       
-      <guid>https://7coco.github.io/about/</guid>
-      <description>About me 誰？ 名前：7coco (ナナココ、もしくはセブンココ、もしくは単にココ)
-生年月日：1998年6月20日 (18歳)
-職業：Webエンジニア
-所属：株式会社マネーフォワード 開発推進本部
-twitter：@7__coco, GitHub：@7coco
-学歴 学芸大附属 =&amp;gt; 早稲田実業 =&amp;gt; N高等学校 =&amp;gt; マネーフォワードに就職
-どんなエンジニア？ プログラミング始めて1年です。
-JavaScript(Node.js), Ruby(Ruby on Rails)を書いてきて、就職して Java を始めました。
-FAQ 1. どうしてプログラミング始めたの？ なんか記事書く
-2. なんで大学行かなかったの？ なんか記事書くかも
-3. N高等学校って何？ ざっくり言うと、角川ドワンゴが作った2016年にはじめったネットの高校です。きちんと国の認可を受けた通信制高校で、一般的な高校と同じ高校卒業資格の取得が可能です。
-年に数日のスクーリングを除いて授業はすべてネット上で行われるため、一般的な高校と比べて圧倒的に自由な時間が得られるのがいいところ。学費も安い。
-詳しくはこちら 。
-4. バンタンプログラマーズハイレベルハイスクールって何？ 5. なんで 7coco なの？ GitHubのアカウントを学校でとったので、出席番号の7と本名の下の名前の湖々(ココ)をくっつけました。</description>
+      <guid>https://7coco.github.io/topics/post/</guid>
+      <description></description>
     </item>
     
   </channel>
