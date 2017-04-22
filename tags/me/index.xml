@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>7coco Tech Blog</title>
-    <link>https://7coco.github.io/</link>
-    <description>Recent content on 7coco Tech Blog</description>
+    <title>Me on 7coco Tech Blog</title>
+    <link>https://7coco.github.io/tags/me/</link>
+    <description>Recent content in Me on 7coco Tech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
     <lastBuildDate>Sat, 22 Apr 2017 13:38:18 +0900</lastBuildDate>
     
-	<atom:link href="https://7coco.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://7coco.github.io/tags/me/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -32,15 +32,6 @@ FAQ 1. どうしてプログラミング始めたの？ なんか記事書く
 年に数日のスクーリングを除いて授業はすべてネット上で行われるため、一般的な高校と比べて圧倒的に自由な時間が得られるのがいいところ。学費も安い。
 詳しくはこちら 。
 4. バンタンプログラマーズハイレベルハイスクールって何？ 5. なんで 7coco なの？ GitHubのアカウントを学校でとったので、出席番号の7と本名の下の名前の湖々(ココ)をくっつけました。</description>
-    </item>
-    
-    <item>
-      <title>test</title>
-      <link>https://7coco.github.io/post/test/</link>
-      <pubDate>Thu, 20 Apr 2017 09:01:39 +0900</pubDate>
-      
-      <guid>https://7coco.github.io/post/test/</guid>
-      <description> てすと  もう直ぐ出勤しなきゃ。  </description>
     </item>
     
   </channel>
