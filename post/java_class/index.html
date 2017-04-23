@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.20.1" />
+
+  <title>Java のクラスについて &middot; 7coco Tech Blog</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://7coco.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://7coco.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://7coco.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://7coco.github.io/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="https://7coco.github.io/">7cocoTechBlog</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://7coco.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://7coco.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://7coco.github.io/about"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://7coco.github.io/contact/"><i class='fa fa-phone fa-fw'></i>Contact</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/7__coco" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://facebook.com/kawano.koko" target="_blank"><i class="fa fa-facebook-square fa-fw"></i>Facebook</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/7coco" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2016. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Java のクラスについて</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>04 Apr 2017, 14:49</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://7coco.github.io/topics/til">TIL</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="https://7coco.github.io/topics/"></a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/java">Java</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/"></a>
+    
+  </div>
+  
+  
+
+</div>
+
+  
+
+<h1 id="本日のtil">本日のTIL</h1>
+
+<p>今回は「やさしいJava」を読んで Java のクラスについて学んだ中で今まで意識できていなかった考え方や馴染みのなかった書き方、概念などについて書きます。</p>
+
+<h2 id="クラスの機能">クラスの機能</h2>
+
+<h3 id="カプセル化">カプセル化</h3>
+
+<p>カプセル化についてはもちろん Java を学び始める前もなるべく意識してコードを書いてきたので詳しくは書きませんが、全てのメソッドの先頭に <code>public</code> <code>private</code> とついているとわかりやすいなと思いました。
+( Ruby で <code>private</code> 以下が長くなって「結局これ private メソッドなの？」みたいになること、うーん、あるのか……？)</p>
+
+<h3 id="メソッドのオーバーロード">メソッドのオーバーロード</h3>
+
+<p>Java では <strong>同じクラスの中に、同じ名前を持つメソッドを複数定義すること</strong>  ができ、これを <strong>メソッドのオーバーロード</strong> といいます。
+ちなみに、コンストラクタもオーバーロードすることができます。</p>
+
+<h4 id="効果">効果</h4>
+
+<ul>
+<li>似たような複数の処理を、1つのメソッド名を覚えて使うだけで自動的に型や個数に応じた処理が行われる。</li>
+<li>似たような処理について同じメソッド名を利用することができる。</li>
+<li>1つの名前が別々の働きを持つことを多様性というが、これが生まれる。</li>
+</ul>
+
+<h4 id="注意点">注意点</h4>
+
+<ul>
+<li>オーバーロードするメソッドは引数の型もしくは個数が異なってなければならない。</li>
+</ul>
+
+<h4 id="余談">余談</h4>
+
+<p>Ruby にはないものですね ( そうですよね？ ) 。
+これができるのはやはり静的型言語の強みなのかなと思います。
+今まで JS や Ruby しか書いていなかったので、同じ名前のメソッドを同じクラス内に定義するというとびっくりしますが、考えてみればとても便利ですね。
+Ruby だと、個数の違いに対応するために引数にデフォルト値を入れたり配列やハッシュを引数にしたり、引数の型で処理を分けるためにメソッドの中で調べたりすると思いますが、 Java だとその必要がなくて、一つのメソッドが無駄に長くならなくて嬉しいですね！</p>
+
+<h3 id="インスタンス変数-インスタンスメソッド">インスタンス変数・インスタンスメソッド</h3>
+
+<ul>
+<li>オブジェクトに関連づけられているフィールドをインスタンス変数</li>
+<li>オブジェクトに関連づけられているメソッドをインスタンスメソッド</li>
+</ul>
+
+<p>と言います。</p>
+
+<p>インスタンス変数・インスタンスメソッドはオブジェクトが作成された時にアクセスできるものです。</p>
+
+<h3 id="クラス変数-クラスメソッド">クラス変数・クラスメソッド</h3>
+
+<p><strong>クラスに関連づけられているフィールドを <em>クラス変数</em> 、メソッドを <em>クラスメソッド</em> と言います。</strong>
+これらはインスタンス変数とは異なり、クラス全体に関連づけられます。
+<strong>クラス全体で扱うデータを格納しておくフィールド</strong> がクラス変数、
+クラス変数を出力するなど、 <strong>クラス全体に関わる処理を行う</strong> のがクラスメソッドです。
+クラスメソッドはオブジェクトが作成されていなくても呼び出せます。
+代表的なクラスメソッドとして <code>main()</code> メソッドがあります。</p>
+
+<h4 id="注意点-1">注意点</h4>
+
+<ul>
+<li><code>this.</code> はインスタンスメソッドの中でしかつけられない。</li>
+</ul>
+
+<h3 id="ローカル変数">ローカル変数</h3>
+
+<p>メソッドの中で宣言する変数やメソッド内で使われる仮引数のことを <strong>ローカル変数</strong> と言います。</p>
+
+<h4 id="注意点-2">注意点</h4>
+
+<ul>
+<li>慣習として、インスタンス変数・クラス変数では内容がわかりやすい長い変数名を使うことが多いのに対し、ローカル変数は内容をコンパクトに表した短い変数名を使うことがある。</li>
+<li>宣言したメソッド以外の場所では使えない。</li>
+<li>メソッドが呼び出されるたびに初期化される。</li>
+</ul>
+
+<h3 id="クラス型の変数への代入">クラス型の変数への代入</h3>
+
+<p>例えば  <code>Car</code> というクラスがあった場合</p>
+
+<pre><code class="language-java">Car car1 = new Car();
+
+Car car2;
+car2 = car1;
+</code></pre>
+
+<p>このように、 <strong>クラス型の変数に同じクラス型の変数を代入する</strong> ことができるようになっています。</p>
+
+<p>ここで注意したいのは <strong>代入された変数がもう一方の変数の指しているオブジェクトを指すようになる</strong> ということです。
+つまり、複数の変数が一つのオブジェクトを指している状態になるということですね。</p>
+
+<h4 id="nullの仕組み">nullの仕組み</h4>
+
+<p>クラス型の変数に <code>null</code> を代入するとその変数は <strong>どのオブジェクトもあらわさなく</strong> なります。
+さらに、そのオブジェクトがどの変数からも扱われなくなった場合はGCの働きでオブジェクトが破棄されます。
+ただし、複数の変数が同じオブジェクトを指していた時は、一つに <code>null</code> が代入されただけではオブジェクトが破棄されることはありません。</p>
+
+<h4 id="finalize-メソッド"><code>finalize()</code> メソッド</h4>
+
+<p>オブジェクトが作成されるときにコンストラクタが自動的に呼び出されたのと同じように、オブジェクトが破棄される時は <code>finalize()</code> メソッドが自動的に呼び出されます。
+ただし、Java の GC によってオブジェクトは破棄されるため、 <code>finalize()</code> が呼び出されるタイミングを管理することはできません。</p>
+
+<h3 id="スーパークラスのコンストラクタ">スーパークラスのコンストラクタ</h3>
+
+<p>Java スーパークラスを拡張してサブクラスを定義することができます。
+サブクラスのオブジェクトが作成された時、特に何も指定していない場合は <strong>サブクラスのコンストラクタ内の先頭で、スーパークラスの引数のないコンストラクタが呼び出され</strong> ます。
+ただし、 <code>super()</code> を記述すると <strong>どのコンストラクタを呼び出すか指定できる</strong> ようになります。</p>
+
+<pre><code class="language-java">super(arg1); // 引数1つのコンストラクタが呼び出される
+super(arg1, arg2, arg3); //引数3つのコンストラクタが呼び出される
+</code></pre>
+
+<h4 id="注意点-3">注意点</h4>
+
+<p><code>this()</code> を使うとそのクラスの別のコンストラクタを呼び出すことができますが、 <code>this()</code> も <code>super()</code> もコンストラクタ内の先頭に記述しなければならないので同時に使用する子はできません。</p>
+
+<h3 id="サブクラスからのアクセス">サブクラスからのアクセス</h3>
+
+<p>スーパークラスの private メンバにはサブクラスからもアクセスすることはできません。
+スーパークラスでは <code>protected</code> という指定ができるようになっており、 <strong>protectedメンバにはサブクラスからアクセスすることができます。</strong></p>
+
+<h3 id="オーバーライド">オーバーライド</h3>
+
+<p>Java では <strong>スーパークラスと全く同じメソッド名・引数の数・型を持つメソッドを定義することができます</strong>。
+様々なクラスのオブジェクトを管理する時、スーパークラスの配列変数で扱うことがありますが、オーバーライドをすることによって、 <strong>オブジェクトをまとめて扱うことができる</strong> ようになります。</p>
+
+<h4 id="super">super()</h4>
+
+<p>サブクラスからスーパークラスの同じ名前のメンバにアクセスする場合は <code>super.</code> をつけます。</p>
+
+<h4 id="finalの使い方">finalの使い方</h4>
+
+<ul>
+<li>メソッドの先頭に <code>final</code> をつけるとオーバーライドされなくなる。</li>
+<li>フィールドに <code>final</code> をつけると値を変更できなくなる。</li>
+<li>クラスに <code>final</code> をつけるとクラスを拡張できなくなる。</li>
+</ul>
+
+<h4 id="tostring">toString()</h4>
+
+<ul>
+<li>Object クラスの <code>toString()</code> メソッドをオーバーライドすると、オブジェクトを表す文字列を定めることができます。</li>
+</ul>
+
+<h4 id="equals">equals()</h4>
+
+<ul>
+<li>Object クラスの <code>equals()</code> メソッドでオブジェクトが同じかどうか調べることができる</li>
+</ul>
+
+<h4 id="getclass">getClass()</h4>
+
+<ul>
+<li>Objectクラスの <code>getClass()</code> メソッドで、オブジェクトのクラス情報を知ることができる</li>
+</ul>
+
+<h2 id="ふう-そろそろ所感">ふう。そろそろ所感</h2>
+
+<p>なかなか長くなりましたね。
+オーバーロードとオーバーライドはなんだか言い間違えてしまいそうですねw
+どちらもオブジェクト指向プログラミングをする上では大切な考え方だと理解しています。
+あとはとにかく実際にコードを読み書きして自然とそういう書き方ができるようになりたいですね。
+次は抽象クラスやインターフェイスについてまとめます！</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://7coco.github.io/post/java_collection/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://7coco.github.io/post/java_collection/">Java のコレクションのまとめ</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://7coco.github.io/post/java_interface/">Java の抽象クラス・インターフェイスについて</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://7coco.github.io/post/java_interface/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'https-7coco-github-io';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+</div>
+</div>
+<script src="https://7coco.github.io/js/ui.js"></script>
+
+
+
+
+</body>
+</html>
+

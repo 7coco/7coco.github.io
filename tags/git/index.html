@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.20.1" />
 
-  <title>正規表現 &middot; 7coco Tech Blog</title>
+  <title>Git &middot; 7coco Tech Blog</title>
 
   
   
@@ -37,7 +37,7 @@
 
   
   
-  <link rel="alternate" type="application/rss+xml" title="7coco Tech Blog" href="https://7coco.github.io/tags/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE/index.xml" />
+  <link rel="alternate" type="application/rss+xml" title="7coco Tech Blog" href="https://7coco.github.io/tags/git/index.xml" />
   
 
   
@@ -103,7 +103,7 @@
 
     
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://7coco.github.io/tags/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      <a class="pure-menu-link" href="https://7coco.github.io/tags/git/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
     </li>
     
 
@@ -208,20 +208,20 @@
 
 
 <div class="header">
-  <h1>正規表現</h1>
+  <h1>Git</h1>
 </div>
 
 <div class="content">
   
     <article>
   <header>
-    <h2><a href="https://7coco.github.io/post/java_regexp/">Java の正規表現でぶつかった</a></h2>
+    <h2><a href="https://7coco.github.io/post/git_fixup/">git commit --fixup</a></h2>
 
     <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>30 Mar 2017, 14:27</time>
+    <time>14 Apr 2017, 14:56</time>
   </div>
 
   
@@ -246,9 +246,9 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/java">Java</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/git">git</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE">正規表現</a>
+      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/"></a>
     
   </div>
   
@@ -259,19 +259,15 @@
   </header>
 
   <p>
-  03/30のTIL では早速本日のTIL ぶつかったこと Java を書く中で正規表現で文字の &ldquo;[&rdquo; や &ldquo;]&rdquo; にマッチさせたいと思って、頭の中でこんな感じに思い浮かべました。
- Pattern.compile(&quot;[[]]&quot;);  いやいやこれじゃメタ文字の [] になっちゃうよと思い、実際にはこう書きました。
-Pattern.compile(&quot;[\[\]]&quot;);  ただしこれは &gt; Invalid escape sequence (valid ones are \b \t \n \f \r \&rdquo; \&rsquo; \ )
-と言われます。 「ん？じゃあエスケープしなくていいの？」と思い、最初に頭に思い浮かべたものを書くと、今度はコンパイルできました。 ところが、実行してみるとこう言われます。
- Exception in thread &ldquo;main&rdquo; java.util.regex.PatternSyntaxException: Unclosed character class near index 3
- 解決法 結論としてはこうすれば動きます。
-Pattern.compile(&quot;[\\[\\]]&quot;);  自分なりに解説 [] のままでは文字ではなく正規表現のメタ文字として評価されてしまうというのは正しかったです。 ただ、ならば \ でエスケープして \[\] とすればいいかというとそれだけではダメです。 Java では文字列中で \ を表すには \ を用いてエスケープする必要があるからです。 結果として \\[\\] になります。 もちろん、[ ] に限らず、正規表現内でエスケープが必要な文字は全て、 正規表現のエスケープとしての \ と Java の文字列のエスケープとしての \ の二つが必要 です。
+  本日のTIL ぶつかったこと 仕事でコードを書いてレビューをお願いしたら、上司から二つ前のコミットを変えるように言われました。 「--fixup を使うといいよ！」と言われたのですが、そのオプションを知らなかったのでググってみました。
+解決法 普通にコミットするときに既存のコミットを下のように指定します。
+git commit --fixup HEAD~1  こうすると指定されたコミットメッセージの先頭に &ldquo;fixup! &rdquo; がついたコミットになります。
+そして、この状態で --autosquash というオプションをつけて rebase -i します。
+git rebase -i --autosquash HEAD~2  すると、エディタが開きますが、とりあえず何も考えず内容を保存して終了してみましょう ( エディタが開いた段階で指定したコミットと&rdquo;fixup!&rdquo; がついたコミットがまとめられるようになっています )。 これで、 &ldquo;fixup!&rdquo; のついたコミットと指定したコミットが一つにまとまります ( コミットメッセージには &ldquo;fixup!&rdquo; はつきません ) 。
+ちなみに、 --autosquash というのは長いですね。いちいちオプションをつけるのは面倒です。 エイリアスを設定してもいいのですが、下記のように設定するといつでも rebase をするときに --autosquash をつけたのと同じことになります。--autosquash オプションをつけて頻繁に rebase する場合はぜひ下記のコマンドを叩きましょう。
+git config --global rebase.autosquash true  まとめ 便利なオプションがあったんだなあ。というお気持ちです。はい。
   </p>
 
-  
-  <footer>
-    <a href="https://7coco.github.io/post/java_regexp/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
   
 </article>
 

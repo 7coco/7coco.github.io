@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.20.1" />
+
+  <title>Java のコレクションのまとめ &middot; 7coco Tech Blog</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://7coco.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://7coco.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://7coco.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://7coco.github.io/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="https://7coco.github.io/">7cocoTechBlog</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://7coco.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://7coco.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://7coco.github.io/about"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://7coco.github.io/contact/"><i class='fa fa-phone fa-fw'></i>Contact</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/7__coco" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://facebook.com/kawano.koko" target="_blank"><i class="fa fa-facebook-square fa-fw"></i>Facebook</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/7coco" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2016. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Java のコレクションのまとめ</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>01 Apr 2017, 14:46</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://7coco.github.io/topics/til">TIL</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="https://7coco.github.io/topics/"></a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/java">Java</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/"></a>
+    
+  </div>
+  
+  
+
+</div>
+
+  
+
+<h1 id="本日のtil">本日のTIL</h1>
+
+<h2 id="前提として">前提として。</h2>
+
+<p><strong>Java 書いたことないんじゃあ！</strong>
+Java どころか静的型言語をまともに書いたことがありませんでした。
+今までやってきたのは JS ( 主にサーバーサイドNode.js ) と Ruby ( Rails ) でした。
+しかもやってきたと言ってもたかだか一年間で、エンジニアとしてのバイトやインターンは複数の会社でやっていましたがまだまだひよっこです。
+そんな私がマネーフォワードに入社するにあたり Java を書くことになって、インターン期間中は Java の勉強をしていました。</p>
+
+<p>この記事を読むときは一応前提として上記のことを頭においていただければなと思います。</p>
+
+<h2 id="java-のコレクション">Java のコレクション</h2>
+
+<p>Java には様々な種類のコレクションがあるのですが、そのうち私がこの一週間半で使ってみたコレクションについてまとめます。</p>
+
+<h3 id="配列">配列</h3>
+
+<p>配列という言葉はお馴染みのものですが、Java の配列は私が知っている JS や Ruby の配列とは決定的に違うことが一つありました。
+<strong>長さが変えられない</strong> ということです。</p>
+
+<p>また、初期化の方法も少し馴染みのない感じでした。</p>
+
+<pre><code class="language-java">// 例えばこんな感じとか
+int array[] = new int[5];
+// こんな感じ
+int array[] = { 1, 2, 3, 4, 5 };
+</code></pre>
+
+<pre><code class="language-ruby"># 例えばこんな感じとか
+array = Array.new(5)
+# こんな感じ
+array = [1, 2, 3, 4, 5]
+</code></pre>
+
+<p><code>array[]</code> という書き方や <code>{</code> <code>}</code> で囲うのは新鮮だなあと感じました ( だからと言ってどうというわけでもないのですがw )。</p>
+
+<h3 id="リスト">リスト</h3>
+
+<p>リストも配列と同じような複数のデータを扱うためのデータ構造です。
+ただし、サイズの変更が可能です。</p>
+
+<pre><code class="language-java">List&lt;Integer&gt; list = new ArrayList&lt;Integer&gt;();
+list.add(1);
+list.add(2);
+System.out.println(list.get(0)); //=&gt; 1
+list.set(0, 0);
+System.out.println(list.get(0)); // =&gt; 0
+</code></pre>
+
+<pre><code class="language-ruby">list = []
+list &lt;&lt; 1 &lt;&lt; 2
+# list.push(1, 2)
+p list[0] # =&gt; 1
+list[0] = 0
+p list[0] # =&gt; 0
+</code></pre>
+
+<p>こうして書くと Ruby ってものすごくスッキリしてるなあって改めて思いますね。
+Ruby や JS でいう配列が Java でいう ArrayList なのかなと思って今の所使っています。
+リストには ArrayList の他にも具象クラスがあるそうですが、公式ドキュメントを読んでもよくわかりませんでした……。
+「これは知っておいたほうがいいよ」というものがありましたら教えてくださると嬉しいです！</p>
+
+<h3 id="マップ">マップ</h3>
+
+<p>キーに関連付けてデータ ( 値 ) を格納するデータ構造です。
+いわゆる連想配列だと理解しています。</p>
+
+<pre><code class="language-java">Map&lt;String, Integer&gt; map =  new HashMap&lt;String, Integer&gt;();
+map.put(&quot;a&quot;, 1);
+map.put(&quot;b&quot;, 2);
+System.out.println(map.get(&quot;a&quot;)); // =&gt; 1
+map.put(&quot;a&quot;, 0);
+System.out.println(map.get(&quot;a&quot;)); // =&gt; 0
+</code></pre>
+
+<pre><code class="language-ruby">map = {}
+map[:a] = 1
+map[:b] = 2
+p map[:a] # =&gt; 1
+map[:a] = 0
+p map[:a] # =&gt; 0
+</code></pre>
+
+<p>こちらも色々な具象クラスがあって、順番を保持しない HashMap,  挿入された順に順番を保持する LinkedHashMap, キーの自然順序付け (具体的にどういう順序付けなのか詳しく調べてないです申し訳ないです。) に従ってソートされる TreeMap などがあるみたいです。
+リストの時と同じく「これ知っておいたほうがいいよ」というのがありましたら教えてください。</p>
+
+<h3 id="セット">セット</h3>
+
+<p>重複要素のないコレクションです。
+これは私の知る限り JS にはないコレクションですね ( ES2017とか最新のものを追っていないので知らないだけかも…… )。</p>
+
+<pre><code class="language-java">Set&lt;Integer&gt; set = new HashSet&lt;Integer&gt;();
+set.add(1);
+set.add(1);
+System.out.println(set); // =&gt; [1]
+</code></pre>
+
+<pre><code class="language-ruby">set = set.new
+set &lt;&lt; 1 # set.add(1)
+set &lt;&lt; 1
+p set # =&gt; #&lt;Set: {1}&gt;
+</code></pre>
+
+<p>セットにも HashSet, LinkedHashSet, TreeSet というマップの時と似た具象クラスがありますね。</p>
+
+<h3 id="ふう">ふう。</h3>
+
+<p>結構長かったですね。
+本当は各コレクションについての反復処理とかについても書きたかったのですが、 Java のループもなんだか色々あってまだまとめられるレベルになっていないので今回はここまでです。
+自分が知っているものに当てはめて覚えた方が物事の習得が早くなると聞いてなんとなく Ruby と並べて書いてみましたが、だいたい同じことを書いているつもりなので間違い勘違い等見つけてくださった方は是非教えてください。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>そんなこんなでインターン期間を終えて、4月から正社員としてマネーフォワードで働きます！
+Java と Rails どっちもバリバリ書いてたくさんの価値を生み出せるサーバーサイドエンジニアを目指していますので皆さんよろしくお願いします！</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://7coco.github.io/post/emacsoneclipse/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://7coco.github.io/post/emacsoneclipse/">EclipseでEmacsキーバインドが使えなくなった</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://7coco.github.io/post/java_class/">Java のクラスについて</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://7coco.github.io/post/java_class/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'https-7coco-github-io';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+</div>
+</div>
+<script src="https://7coco.github.io/js/ui.js"></script>
+
+
+
+
+</body>
+</html>
+

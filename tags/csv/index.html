@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.20.1" />
 
-  <title>正規表現 &middot; 7coco Tech Blog</title>
+  <title>Csv &middot; 7coco Tech Blog</title>
 
   
   
@@ -37,7 +37,7 @@
 
   
   
-  <link rel="alternate" type="application/rss+xml" title="7coco Tech Blog" href="https://7coco.github.io/tags/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE/index.xml" />
+  <link rel="alternate" type="application/rss+xml" title="7coco Tech Blog" href="https://7coco.github.io/tags/csv/index.xml" />
   
 
   
@@ -103,7 +103,7 @@
 
     
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://7coco.github.io/tags/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      <a class="pure-menu-link" href="https://7coco.github.io/tags/csv/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
     </li>
     
 
@@ -208,20 +208,20 @@
 
 
 <div class="header">
-  <h1>正規表現</h1>
+  <h1>Csv</h1>
 </div>
 
 <div class="content">
   
     <article>
   <header>
-    <h2><a href="https://7coco.github.io/post/java_regexp/">Java の正規表現でぶつかった</a></h2>
+    <h2><a href="https://7coco.github.io/post/edit_csv/">Mac で CSV を編集するときの個人的イチオシツール</a></h2>
 
     <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>30 Mar 2017, 14:27</time>
+    <time>11 Apr 2017, 14:53</time>
   </div>
 
   
@@ -246,9 +246,9 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/java">Java</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/csv">csv</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE">正規表現</a>
+      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/"></a>
     
   </div>
   
@@ -259,19 +259,14 @@
   </header>
 
   <p>
-  03/30のTIL では早速本日のTIL ぶつかったこと Java を書く中で正規表現で文字の &ldquo;[&rdquo; や &ldquo;]&rdquo; にマッチさせたいと思って、頭の中でこんな感じに思い浮かべました。
- Pattern.compile(&quot;[[]]&quot;);  いやいやこれじゃメタ文字の [] になっちゃうよと思い、実際にはこう書きました。
-Pattern.compile(&quot;[\[\]]&quot;);  ただしこれは &gt; Invalid escape sequence (valid ones are \b \t \n \f \r \&rdquo; \&rsquo; \ )
-と言われます。 「ん？じゃあエスケープしなくていいの？」と思い、最初に頭に思い浮かべたものを書くと、今度はコンパイルできました。 ところが、実行してみるとこう言われます。
- Exception in thread &ldquo;main&rdquo; java.util.regex.PatternSyntaxException: Unclosed character class near index 3
- 解決法 結論としてはこうすれば動きます。
-Pattern.compile(&quot;[\\[\\]]&quot;);  自分なりに解説 [] のままでは文字ではなく正規表現のメタ文字として評価されてしまうというのは正しかったです。 ただ、ならば \ でエスケープして \[\] とすればいいかというとそれだけではダメです。 Java では文字列中で \ を表すには \ を用いてエスケープする必要があるからです。 結果として \\[\\] になります。 もちろん、[ ] に限らず、正規表現内でエスケープが必要な文字は全て、 正規表現のエスケープとしての \ と Java の文字列のエスケープとしての \ の二つが必要 です。
+  本日のTIL ぶつかったこと 新規アグリコードを書いていたら、CSVを編集しなければならなくなり、Mac で CSV をいい感じに編集できるものを探すことになりました。 一応、前提として私は以下のような状況でした。 - excel は持ってない。高い。 - Numbers で編集すると拡張子が .numbers になったものを編集してることになってややこしいし、なぜか Numbers で開くと空白とか書式が勝手に Numbers 的によしなにされてしまうらしく、余計な差分が出まくる。 - 普段 atom を使っている ( やっぱり atom が一番だよね！ )
+解決法 結論 tablr というパッケージを atom にインストール 自分なりに解説 解説というか、一応使い方みたいなところを書いておきます。
+インストール apm install tablr  使い方 tablr がインストールされた状態で csv ファイルを開くと下のような画面が出てきます。
+「Open Table Editor」で表になった状態で編集できる画面が、「Open Text Editor」で通常のテキストベースでの編集ができます。
+OpenTableEditor OpenTableEditor を選択するとこんな感じに表示されます。 セルの編集はもちろん複数選択やコピペなどができて、普通の表を編集する時に求めるような機能はだいたいあると思います。 一応 こちら がチートシートになっているので、あの機能はどうやったら使えるんだ？という時には覗くときっと見つかると思います。 基本的な編集は直感的に行えますので、あまり複雑なことをしなければ導入にあたっては苦労しない気がします。
+まとめ やはり普段使っているエディタを使うのが慣れるのも早く、導入もスムーズでいいですね。 atom は新しい言語のシンタックスハイライトやリンターなどに代表されるように、様々なパッケージが常に作られていて、それを手軽にインストールすることができるので便利です。 まともなエディタならみんなそうだと言われてしまうとその通りだと思いますが、私はやっぱり atom が一番慣れているのでw
   </p>
 
-  
-  <footer>
-    <a href="https://7coco.github.io/post/java_regexp/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
   
 </article>
 

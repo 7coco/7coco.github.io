@@ -41,6 +41,10 @@
   
 
   
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
 
   <link rel="shortcut icon" href="https://7coco.github.io/img/favicon.ico" type="image/x-icon" />
 
@@ -208,6 +212,191 @@
 </div>
 
 <div class="content">
+  
+    <article>
+  <header>
+    <h2><a href="https://7coco.github.io/post/java_interface/">Java の抽象クラス・インターフェイスについて</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>10 Apr 2017, 14:51</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://7coco.github.io/topics/til">TIL</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="https://7coco.github.io/topics/"></a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/java">Java</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/"></a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  本日のTIL 今日は 前回 予告した通り Java の抽象クラスとインターフェイスについてまとめます。
+抽象クラス abstract という修飾子をつけることで 抽象クラス を作ることができます。
+特徴  オブジェクトを作成することができない  new して作れないってこと。 抽象クラスの変数や配列は準備してサブクラスのオブジェクトをさすことはできる。  処理内容が定義されていないメソッド ( 抽象メソッド &ndash; abstract method )を持っている。  abstract というキーワードをつけてメソッドを定義すると抽象メソッドに。  サブクラスを拡張することができる。  ただし、 抽象クラスから継承した抽象メソッドの内容をサブクラスで定義、オーバーライドしなければならない 。 サブクラスは必ずその抽象クラスのメソッドを持っているので、まとめて簡単に扱える。   インターフェイス 宣言 こんな感じ↓
+interface iVehicle { void show(); // 抽象メソッド }  特徴  interface を使って宣言する。 フィールドとメソッドを持つことができる。 コンストラクタは持たない。 フィールドは必ず初期化する。 メソッドの処理は定義しない。 メンバには何も修飾子をつけない。  何もつけなくても、フィールドには public static final, メソッドには abstract がついているのと同じことに。 つまりフィールドは絶対定数で、メソッドは抽象メソッド。  オブジェクトを作成することはできません。  変数・配列を宣言することはできる。  クラスと組み合わせて使うことになっている。  クラスと組み合わせることを インターフェイスを実装する という。   使い方 インターフェイスの実装 class &lt;クラス名&gt; implements &lt;インターフェイス名&gt; { /* hogehoge fugafuga piyopiyo */ }  さて、このようなクラスを作ったら、インターフェイスのメソッドをすべて定義する という作業が必要になります。 インターフェイス型の配列は、そのインターフェイスを実装しているサブクラスのオブジェクトを指すことができます。インンターフェイスも、上で見た抽象kルアスと同じように サブクラスをまとめて扱うことができます 。
+  </p>
+
+  
+  <footer>
+    <a href="https://7coco.github.io/post/java_interface/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://7coco.github.io/post/java_class/">Java のクラスについて</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>04 Apr 2017, 14:49</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://7coco.github.io/topics/til">TIL</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="https://7coco.github.io/topics/"></a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/java">Java</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/"></a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  本日のTIL 今回は「やさしいJava」を読んで Java のクラスについて学んだ中で今まで意識できていなかった考え方や馴染みのなかった書き方、概念などについて書きます。
+クラスの機能 カプセル化 カプセル化についてはもちろん Java を学び始める前もなるべく意識してコードを書いてきたので詳しくは書きませんが、全てのメソッドの先頭に public private とついているとわかりやすいなと思いました。 ( Ruby で private 以下が長くなって「結局これ private メソッドなの？」みたいになること、うーん、あるのか……？)
+メソッドのオーバーロード Java では 同じクラスの中に、同じ名前を持つメソッドを複数定義すること ができ、これを メソッドのオーバーロード といいます。 ちなみに、コンストラクタもオーバーロードすることができます。
+効果  似たような複数の処理を、1つのメソッド名を覚えて使うだけで自動的に型や個数に応じた処理が行われる。 似たような処理について同じメソッド名を利用することができる。 1つの名前が別々の働きを持つことを多様性というが、これが生まれる。  注意点  オーバーロードするメソッドは引数の型もしくは個数が異なってなければならない。  余談 Ruby にはないものですね ( そうですよね？ ) 。 これができるのはやはり静的型言語の強みなのかなと思います。 今まで JS や Ruby しか書いていなかったので、同じ名前のメソッドを同じクラス内に定義するというとびっくりしますが、考えてみればとても便利ですね。 Ruby だと、個数の違いに対応するために引数にデフォルト値を入れたり配列やハッシュを引数にしたり、引数の型で処理を分けるためにメソッドの中で調べたりすると思いますが、 Java だとその必要がなくて、一つのメソッドが無駄に長くならなくて嬉しいですね！
+インスタンス変数・インスタンスメソッド  オブジェクトに関連づけられているフィールドをインスタンス変数 オブジェクトに関連づけられているメソッドをインスタンスメソッド  と言います。
+インスタンス変数・インスタンスメソッドはオブジェクトが作成された時にアクセスできるものです。
+クラス変数・クラスメソッド クラスに関連づけられているフィールドを クラス変数 、メソッドを クラスメソッド と言います。 これらはインスタンス変数とは異なり、クラス全体に関連づけられます。 クラス全体で扱うデータを格納しておくフィールド がクラス変数、 クラス変数を出力するなど、 クラス全体に関わる処理を行う のがクラスメソッドです。 クラスメソッドはオブジェクトが作成されていなくても呼び出せます。 代表的なクラスメソッドとして main() メソッドがあります。
+  </p>
+
+  
+  <footer>
+    <a href="https://7coco.github.io/post/java_class/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://7coco.github.io/post/java_collection/">Java のコレクションのまとめ</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>01 Apr 2017, 14:46</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://7coco.github.io/topics/til">TIL</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="https://7coco.github.io/topics/"></a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/java">Java</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/"></a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  本日のTIL 前提として。 Java 書いたことないんじゃあ！ Java どころか静的型言語をまともに書いたことがありませんでした。 今までやってきたのは JS ( 主にサーバーサイドNode.js ) と Ruby ( Rails ) でした。 しかもやってきたと言ってもたかだか一年間で、エンジニアとしてのバイトやインターンは複数の会社でやっていましたがまだまだひよっこです。 そんな私がマネーフォワードに入社するにあたり Java を書くことになって、インターン期間中は Java の勉強をしていました。
+この記事を読むときは一応前提として上記のことを頭においていただければなと思います。
+Java のコレクション Java には様々な種類のコレクションがあるのですが、そのうち私がこの一週間半で使ってみたコレクションについてまとめます。
+配列 配列という言葉はお馴染みのものですが、Java の配列は私が知っている JS や Ruby の配列とは決定的に違うことが一つありました。 長さが変えられない ということです。
+また、初期化の方法も少し馴染みのない感じでした。
+// 例えばこんな感じとか int array[] = new int[5]; // こんな感じ int array[] = { 1, 2, 3, 4, 5 };  # 例えばこんな感じとか array = Array.new(5) # こんな感じ array = [1, 2, 3, 4, 5]  array[] という書き方や { } で囲うのは新鮮だなあと感じました ( だからと言ってどうというわけでもないのですがw )。
+  </p>
+
+  
+  <footer>
+    <a href="https://7coco.github.io/post/java_collection/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
   
     <article>
   <header>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Csv on 7coco Tech Blog</title>
+    <link>https://7coco.github.io/tags/csv/</link>
+    <description>Recent content in Csv on 7coco Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 11 Apr 2017 14:53:56 +0900</lastBuildDate>
+    
+	<atom:link href="https://7coco.github.io/tags/csv/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mac で CSV を編集するときの個人的イチオシツール</title>
+      <link>https://7coco.github.io/post/edit_csv/</link>
+      <pubDate>Tue, 11 Apr 2017 14:53:56 +0900</pubDate>
+      
+      <guid>https://7coco.github.io/post/edit_csv/</guid>
+      <description>本日のTIL ぶつかったこと 新規アグリコードを書いていたら、CSVを編集しなければならなくなり、Mac で CSV をいい感じに編集できるものを探すことになりました。 一応、前提として私は以下のような状況でした。 - excel は持ってない。高い。 - Numbers で編集すると拡張子が .numbers になったものを編集してることになってややこしいし、なぜか Numbers で開くと空白とか書式が勝手に Numbers 的によしなにされてしまうらしく、余計な差分が出まくる。 - 普段 atom を使っている ( やっぱり atom が一番だよね！ )
+解決法 結論 tablr というパッケージを atom にインストール 自分なりに解説 解説というか、一応使い方みたいなところを書いておきます。
+インストール apm install tablr  使い方 tablr がインストールされた状態で csv ファイルを開くと下のような画面が出てきます。
+「Open Table Editor」で表になった状態で編集できる画面が、「Open Text Editor」で通常のテキストベースでの編集ができます。
+OpenTableEditor OpenTableEditor を選択するとこんな感じに表示されます。 セルの編集はもちろん複数選択やコピペなどができて、普通の表を編集する時に求めるような機能はだいたいあると思います。 一応 こちら がチートシートになっているので、あの機能はどうやったら使えるんだ？という時には覗くときっと見つかると思います。 基本的な編集は直感的に行えますので、あまり複雑なことをしなければ導入にあたっては苦労しない気がします。
+まとめ やはり普段使っているエディタを使うのが慣れるのも早く、導入もスムーズでいいですね。 atom は新しい言語のシンタックスハイライトやリンターなどに代表されるように、様々なパッケージが常に作られていて、それを手軽にインストールすることができるので便利です。 まともなエディタならみんなそうだと言われてしまうとその通りだと思いますが、私はやっぱり atom が一番慣れているのでw</description>
+    </item>
+    
+  </channel>
+</rss>

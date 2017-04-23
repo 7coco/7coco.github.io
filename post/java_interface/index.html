@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.20.1" />
+
+  <title>Java の抽象クラス・インターフェイスについて &middot; 7coco Tech Blog</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://7coco.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://7coco.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://7coco.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://7coco.github.io/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="https://7coco.github.io/">7cocoTechBlog</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://7coco.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://7coco.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://7coco.github.io/about"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://7coco.github.io/contact/"><i class='fa fa-phone fa-fw'></i>Contact</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/7__coco" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://facebook.com/kawano.koko" target="_blank"><i class="fa fa-facebook-square fa-fw"></i>Facebook</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/7coco" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2016. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Java の抽象クラス・インターフェイスについて</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>10 Apr 2017, 14:51</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://7coco.github.io/topics/til">TIL</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="https://7coco.github.io/topics/"></a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/java">Java</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/"></a>
+    
+  </div>
+  
+  
+
+</div>
+
+  
+
+<h1 id="本日のtil">本日のTIL</h1>
+
+<p>今日は <a href="https://7coco.github.io/post/java_collection">前回</a>  予告した通り Java の抽象クラスとインターフェイスについてまとめます。</p>
+
+<h2 id="抽象クラス">抽象クラス</h2>
+
+<p><code>abstract</code> という修飾子をつけることで <strong>抽象クラス</strong> を作ることができます。</p>
+
+<h3 id="特徴">特徴</h3>
+
+<ul>
+<li>オブジェクトを作成することができない
+
+<ul>
+<li>new して作れないってこと。</li>
+<li>抽象クラスの変数や配列は準備してサブクラスのオブジェクトをさすことはできる。</li>
+</ul></li>
+<li>処理内容が定義されていないメソッド ( 抽象メソッド &ndash; abstract method )を持っている。
+
+<ul>
+<li><code>abstract</code> というキーワードをつけてメソッドを定義すると抽象メソッドに。</li>
+</ul></li>
+<li>サブクラスを拡張することができる。
+
+<ul>
+<li>ただし、 <strong>抽象クラスから継承した抽象メソッドの内容をサブクラスで定義、オーバーライドしなければならない</strong> 。</li>
+<li>サブクラスは必ずその抽象クラスのメソッドを持っているので、まとめて簡単に扱える。</li>
+</ul></li>
+</ul>
+
+<h2 id="インターフェイス">インターフェイス</h2>
+
+<h3 id="宣言">宣言</h3>
+
+<p>こんな感じ↓</p>
+
+<pre><code class="language-java">interface iVehicle {
+    void show(); // 抽象メソッド
+}
+</code></pre>
+
+<h3 id="特徴-1">特徴</h3>
+
+<ul>
+<li><code>interface</code> を使って宣言する。</li>
+<li>フィールドとメソッドを持つことができる。</li>
+<li>コンストラクタは持たない。</li>
+<li>フィールドは必ず初期化する。</li>
+<li>メソッドの処理は定義しない。</li>
+<li>メンバには何も修飾子をつけない。
+
+<ul>
+<li>何もつけなくても、フィールドには <code>public static final</code>, メソッドには <code>abstract</code> がついているのと同じことに。</li>
+<li>つまりフィールドは絶対定数で、メソッドは抽象メソッド。</li>
+</ul></li>
+<li>オブジェクトを作成することはできません。
+
+<ul>
+<li>変数・配列を宣言することはできる。</li>
+</ul></li>
+<li>クラスと組み合わせて使うことになっている。
+
+<ul>
+<li>クラスと組み合わせることを <strong>インターフェイスを実装する</strong>  という。</li>
+</ul></li>
+</ul>
+
+<h3 id="使い方">使い方</h3>
+
+<h4 id="インターフェイスの実装">インターフェイスの実装</h4>
+
+<pre><code class="language-java">class &lt;クラス名&gt; implements &lt;インターフェイス名&gt; {
+    /*
+        hogehoge
+        fugafuga
+        piyopiyo
+    */
+}
+</code></pre>
+
+<p>さて、このようなクラスを作ったら、<strong>インターフェイスのメソッドをすべて定義する</strong> という作業が必要になります。
+インターフェイス型の配列は、そのインターフェイスを実装しているサブクラスのオブジェクトを指すことができます。インンターフェイスも、上で見た抽象kルアスと同じように <strong>サブクラスをまとめて扱うことができます</strong> 。</p>
+
+<h3 id="2つ以上のインターフェイスの実装">2つ以上のインターフェイスの実装</h3>
+
+<p>Java は2つ以上のスーパークラスを持つサブクラスを認めていません。
+ただし、 <strong>クラスは2つ以上のインターフェイスを実装することができます</strong> 。
+この場合、実装したインターフェイスすべてののメソッドの処理内容を定義しなければなりません。</p>
+
+<h3 id="インターフェイスの拡張">インターフェイスの拡張</h3>
+
+<p>インターフェイスはクラスと同じように、 <strong>拡張して新しいインターフェイスを宣言することができます</strong> 。拡張される方を <strong>スーパーインターフェイス</strong> , 拡張した方を <strong>サブインターフェイス</strong> といいます。</p>
+
+<pre><code class="language-java">interfaxe &lt;サブインターフェイス名&gt; extends スパーインターフェイス名1, スーパーインターフェイス名2, ・・・
+{
+     ・・・   
+}
+</code></pre>
+
+<h2 id="所感">所感</h2>
+
+<p>抽象クラスとインターフェイスがあればクラスの継承ってあんまりやらなくない？？って思いました。というか、できるだけ抽象クラスかインターフェイスの継承をした方がいいのかなあと。
+これは Rails をやっていたからもしれませんが、継承って繰り返すと何がどうなってるのかどんどんわからなくなるイメージがあって、でも抽象クラスやインターフェイスがあればだいぶそれが軽減される気がしたので。
+実際、Java を書くときはできるだけクラスの継承ではなく抽象クラスの継承やインターフェイスの実装にしようみたいな動きってありますか？
+みなさんコメントでいろいろお話してくださると嬉しいです！</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://7coco.github.io/post/java_class/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://7coco.github.io/post/java_class/">Java のクラスについて</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://7coco.github.io/post/edit_csv/">Mac で CSV を編集するときの個人的イチオシツール</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://7coco.github.io/post/edit_csv/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'https-7coco-github-io';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+</div>
+</div>
+<script src="https://7coco.github.io/js/ui.js"></script>
+
+
+
+
+</body>
+</html>
+

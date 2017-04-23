@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on 7coco Tech Blog</title>
+    <link>https://7coco.github.io/tags/git/</link>
+    <description>Recent content in Git on 7coco Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <lastBuildDate>Fri, 14 Apr 2017 14:56:16 +0900</lastBuildDate>
+    
+	<atom:link href="https://7coco.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>git commit --fixup</title>
+      <link>https://7coco.github.io/post/git_fixup/</link>
+      <pubDate>Fri, 14 Apr 2017 14:56:16 +0900</pubDate>
+      
+      <guid>https://7coco.github.io/post/git_fixup/</guid>
+      <description>本日のTIL ぶつかったこと 仕事でコードを書いてレビューをお願いしたら、上司から二つ前のコミットを変えるように言われました。 「--fixup を使うといいよ！」と言われたのですが、そのオプションを知らなかったのでググってみました。
+解決法 普通にコミットするときに既存のコミットを下のように指定します。
+git commit --fixup HEAD~1  こうすると指定されたコミットメッセージの先頭に &amp;ldquo;fixup! &amp;rdquo; がついたコミットになります。
+そして、この状態で --autosquash というオプションをつけて rebase -i します。
+git rebase -i --autosquash HEAD~2  すると、エディタが開きますが、とりあえず何も考えず内容を保存して終了してみましょう ( エディタが開いた段階で指定したコミットと&amp;rdquo;fixup!&amp;rdquo; がついたコミットがまとめられるようになっています )。 これで、 &amp;ldquo;fixup!&amp;rdquo; のついたコミットと指定したコミットが一つにまとまります ( コミットメッセージには &amp;ldquo;fixup!&amp;rdquo; はつきません ) 。
+ちなみに、 --autosquash というのは長いですね。いちいちオプションをつけるのは面倒です。 エイリアスを設定してもいいのですが、下記のように設定するといつでも rebase をするときに --autosquash をつけたのと同じことになります。--autosquash オプションをつけて頻繁に rebase する場合はぜひ下記のコマンドを叩きましょう。
+git config --global rebase.autosquash true  まとめ 便利なオプションがあったんだなあ。というお気持ちです。はい。</description>
+    </item>
+    
+  </channel>
+</rss>

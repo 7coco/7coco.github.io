@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Emacs on 7coco Tech Blog</title>
+    <link>https://7coco.github.io/tags/emacs/</link>
+    <description>Recent content in Emacs on 7coco Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <lastBuildDate>Fri, 31 Mar 2017 14:35:07 +0900</lastBuildDate>
+    
+	<atom:link href="https://7coco.github.io/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>EclipseでEmacsキーバインドが使えなくなった</title>
+      <link>https://7coco.github.io/post/emacsoneclipse/</link>
+      <pubDate>Fri, 31 Mar 2017 14:35:07 +0900</pubDate>
+      
+      <guid>https://7coco.github.io/post/emacsoneclipse/</guid>
+      <description>本日のTIL ぶつかった問題 QuickRex というパッケージを Eclipse にインストールしてみたところ、 Eclipse で Emacs キーバインドが使えなくなってしまいました……。
+慌ててパッケージをアンインストール、 Eclipse の再起動を行うも Emacs キーバインドは使えず。
+宮坂さんに EclipseのClean起動 を教わって試してみるも効果なく。
+こうなればやむを得まいと Eclipse の再インストール を行っても効果がなく。
+Eclipse の keys 設定を見に行くと scheme は Emacs になっているし実際によく使うショートカットを検索するときちんと設定されている……。
+正直、もうだめだ！と思いましたw
+解決法 Eclipse の [環境設定] -&amp;gt; [General] -&amp;gt; [keys] で使いたい Emacs キーバインドを探し、 when を In windows に変更。
+自分なりに解説 なぜだかわかりませんが ( タイミング的にインストールしたパッケージの影響と思われる ) ショートカットキーの多くの when が Editing Text になっていました。 Editing Text と言うといかにも正しい気がしますが、実はこれ「 全角入力の変換中 ( 変換の確定をする前で文字に下線が付いている時 ) 」のことなんです……。
+つまりコードを書いている時のほとんどは Editing Textではないということですね……。なんじゃそりゃ。</description>
+    </item>
+    
+  </channel>
+</rss>

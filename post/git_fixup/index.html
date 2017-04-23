@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.20.1" />
 
-  <title>正規表現 &middot; 7coco Tech Blog</title>
+  <title>git commit --fixup &middot; 7coco Tech Blog</title>
 
   
   
@@ -36,8 +36,6 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
   
-  
-  <link rel="alternate" type="application/rss+xml" title="7coco Tech Blog" href="https://7coco.github.io/tags/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE/index.xml" />
   
 
   
@@ -101,10 +99,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://7coco.github.io/tags/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -208,20 +202,16 @@
 
 
 <div class="header">
-  <h1>正規表現</h1>
+  <h1>git commit --fixup</h1>
+  <h2></h2>
 </div>
-
 <div class="content">
-  
-    <article>
-  <header>
-    <h2><a href="https://7coco.github.io/post/java_regexp/">Java の正規表現でぶつかった</a></h2>
 
-    <div class="post-meta">
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>30 Mar 2017, 14:27</time>
+    <time>14 Apr 2017, 14:56</time>
   </div>
 
   
@@ -246,9 +236,9 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/java">Java</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/git">git</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE">正規表現</a>
+      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/"></a>
     
   </div>
   
@@ -256,26 +246,90 @@
 
 </div>
 
-  </header>
+  
 
-  <p>
-  03/30のTIL では早速本日のTIL ぶつかったこと Java を書く中で正規表現で文字の &ldquo;[&rdquo; や &ldquo;]&rdquo; にマッチさせたいと思って、頭の中でこんな感じに思い浮かべました。
- Pattern.compile(&quot;[[]]&quot;);  いやいやこれじゃメタ文字の [] になっちゃうよと思い、実際にはこう書きました。
-Pattern.compile(&quot;[\[\]]&quot;);  ただしこれは &gt; Invalid escape sequence (valid ones are \b \t \n \f \r \&rdquo; \&rsquo; \ )
-と言われます。 「ん？じゃあエスケープしなくていいの？」と思い、最初に頭に思い浮かべたものを書くと、今度はコンパイルできました。 ところが、実行してみるとこう言われます。
- Exception in thread &ldquo;main&rdquo; java.util.regex.PatternSyntaxException: Unclosed character class near index 3
- 解決法 結論としてはこうすれば動きます。
-Pattern.compile(&quot;[\\[\\]]&quot;);  自分なりに解説 [] のままでは文字ではなく正規表現のメタ文字として評価されてしまうというのは正しかったです。 ただ、ならば \ でエスケープして \[\] とすればいいかというとそれだけではダメです。 Java では文字列中で \ を表すには \ を用いてエスケープする必要があるからです。 結果として \\[\\] になります。 もちろん、[ ] に限らず、正規表現内でエスケープが必要な文字は全て、 正規表現のエスケープとしての \ と Java の文字列のエスケープとしての \ の二つが必要 です。
-  </p>
+<h1 id="本日のtil">本日のTIL</h1>
+
+<h2 id="ぶつかったこと">ぶつかったこと</h2>
+
+<p>仕事でコードを書いてレビューをお願いしたら、上司から二つ前のコミットを変えるように言われました。
+「<code>--fixup</code> を使うといいよ！」と言われたのですが、そのオプションを知らなかったのでググってみました。</p>
+
+<h2 id="解決法">解決法</h2>
+
+<p>普通にコミットするときに既存のコミットを下のように指定します。</p>
+
+<pre><code>git commit --fixup HEAD~1
+</code></pre>
+
+<p>こうすると指定されたコミットメッセージの先頭に &ldquo;fixup! &rdquo; がついたコミットになります。</p>
+
+<p>そして、この状態で <code>--autosquash</code> というオプションをつけて <code>rebase -i</code> します。</p>
+
+<pre><code>git rebase -i --autosquash HEAD~2
+</code></pre>
+
+<p>すると、エディタが開きますが、とりあえず何も考えず内容を保存して終了してみましょう ( エディタが開いた段階で指定したコミットと&rdquo;fixup!&rdquo; がついたコミットがまとめられるようになっています )。
+これで、 &ldquo;fixup!&rdquo; のついたコミットと指定したコミットが一つにまとまります ( コミットメッセージには &ldquo;fixup!&rdquo; はつきません ) 。</p>
+
+<p>ちなみに、 <code>--autosquash</code> というのは長いですね。いちいちオプションをつけるのは面倒です。
+エイリアスを設定してもいいのですが、下記のように設定するといつでも rebase をするときに <code>--autosquash</code> をつけたのと同じことになります。<code>--autosquash</code> オプションをつけて頻繁に rebase する場合はぜひ下記のコマンドを叩きましょう。</p>
+
+<pre><code>git config --global rebase.autosquash true
+</code></pre>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>便利なオプションがあったんだなあ。というお気持ちです。はい。</p>
+
 
   
-  <footer>
-    <a href="https://7coco.github.io/post/java_regexp/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://7coco.github.io/post/edit_csv/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://7coco.github.io/post/edit_csv/">Mac で CSV を編集するときの個人的イチオシツール</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
 
   
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'https-7coco-github-io';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
 </div>
 
 </div>
@@ -287,3 +341,4 @@ Pattern.compile(&quot;[\\[\\]]&quot;);  自分なりに解説 [] のままでは
 
 </body>
 </html>
+

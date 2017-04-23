@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.20.1" />
 
-  <title>Java の正規表現でぶつかった &middot; 7coco Tech Blog</title>
+  <title>Mac で CSV を編集するときの個人的イチオシツール &middot; 7coco Tech Blog</title>
 
   
   
@@ -202,7 +202,7 @@
 
 
 <div class="header">
-  <h1>Java の正規表現でぶつかった</h1>
+  <h1>Mac で CSV を編集するときの個人的イチオシツール</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -211,7 +211,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>30 Mar 2017, 14:27</time>
+    <time>11 Apr 2017, 14:53</time>
   </div>
 
   
@@ -236,9 +236,9 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/java">Java</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/csv">csv</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE">正規表現</a>
+      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/"></a>
     
   </div>
   
@@ -248,57 +248,67 @@
 
   
 
-<h1 id="03-30のtil">03/30のTIL</h1>
+<h1 id="本日のtil">本日のTIL</h1>
 
-<h2 id="では早速本日のtil">では早速本日のTIL</h2>
+<h2 id="ぶつかったこと">ぶつかったこと</h2>
 
-<h3 id="ぶつかったこと">ぶつかったこと</h3>
+<p>新規アグリコードを書いていたら、CSVを編集しなければならなくなり、Mac で CSV をいい感じに編集できるものを探すことになりました。
+一応、前提として私は以下のような状況でした。
+- excel は持ってない。高い。
+- Numbers で編集すると拡張子が .numbers になったものを編集してることになってややこしいし、なぜか Numbers で開くと空白とか書式が勝手に Numbers 的によしなにされてしまうらしく、余計な差分が出まくる。
+- 普段 atom を使っている ( やっぱり atom が一番だよね！ )</p>
 
-<p>Java を書く中で正規表現で文字の &ldquo;[&rdquo; や &ldquo;]&rdquo; にマッチさせたいと思って、頭の中でこんな感じに思い浮かべました。</p>
+<h2 id="解決法">解決法</h2>
 
-<pre><code> Pattern.compile(&quot;[[]]&quot;);
+<h3 id="結論">結論</h3>
+
+<h4 id="tablr-https-atom-io-packages-tablr-というパッケージを-atom-にインストール"><a href="https://atom.io/packages/tablr">tablr</a> というパッケージを atom にインストール</h4>
+
+<h2 id="自分なりに解説">自分なりに解説</h2>
+
+<p>解説というか、一応使い方みたいなところを書いておきます。</p>
+
+<h3 id="インストール">インストール</h3>
+
+<pre><code class="language-bash">apm install tablr
 </code></pre>
 
-<p>いやいやこれじゃメタ文字の <code>[]</code> になっちゃうよと思い、実際にはこう書きました。</p>
+<h3 id="使い方">使い方</h3>
 
-<pre><code>Pattern.compile(&quot;[\[\]]&quot;);
-</code></pre>
+<p><code>tablr</code> がインストールされた状態で csv ファイルを開くと下のような画面が出てきます。</p>
 
-<p>ただしこれは
-&gt; Invalid escape sequence (valid ones are  \b  \t  \n  \f  \r  \&rdquo;  \&rsquo;  \ )</p>
+<p><img src="https://files.esa.io/uploads/production/attachments/2264/2017/04/15/19884/8c0009c4-ece7-4f70-8962-2d175eb2a4b0.png" alt="image.png (68.8 kB)" /></p>
 
-<p>と言われます。
-「ん？じゃあエスケープしなくていいの？」と思い、最初に頭に思い浮かべたものを書くと、今度はコンパイルできました。
-ところが、実行してみるとこう言われます。</p>
+<p>「Open Table Editor」で表になった状態で編集できる画面が、「Open Text Editor」で通常のテキストベースでの編集ができます。</p>
 
-<blockquote>
-<p>Exception in thread &ldquo;main&rdquo; java.util.regex.PatternSyntaxException: Unclosed character class near index 3</p>
-</blockquote>
+<h4 id="opentableeditor">OpenTableEditor</h4>
 
-<h3 id="解決法">解決法</h3>
+<p><img src="https://files.esa.io/uploads/production/attachments/2264/2017/04/15/19884/3dd59f07-e5fb-47dc-95a1-300567fa50a6.png" alt="image.png (97.9 kB)" /></p>
 
-<p>結論としてはこうすれば動きます。</p>
+<p>OpenTableEditor を選択するとこんな感じに表示されます。
+セルの編集はもちろん複数選択やコピペなどができて、普通の表を編集する時に求めるような機能はだいたいあると思います。
+一応 <a href="https://github.com/abe33/atom-tablr/blob/master/docs/cheatsheet.md">こちら</a> がチートシートになっているので、あの機能はどうやったら使えるんだ？という時には覗くときっと見つかると思います。
+基本的な編集は直感的に行えますので、あまり複雑なことをしなければ導入にあたっては苦労しない気がします。</p>
 
-<pre><code>Pattern.compile(&quot;[\\[\\]]&quot;);
-</code></pre>
+<h2 id="まとめ">まとめ</h2>
 
-<h3 id="自分なりに解説">自分なりに解説</h3>
-
-<p><code>[]</code> のままでは文字ではなく正規表現のメタ文字として評価されてしまうというのは正しかったです。
-ただ、ならば  <code>\</code> でエスケープして <code>\[\]</code> とすればいいかというとそれだけではダメです。
-Java では文字列中で <code>\</code> を表すには <code>\</code> を用いてエスケープする必要があるからです。
-結果として <code>\\[\\]</code> になります。
-もちろん、<code>[</code> <code>]</code> に限らず、正規表現内でエスケープが必要な文字は全て、 <strong>正規表現のエスケープとしての <code>\</code> と Java の文字列のエスケープとしての <code>\</code> の二つが必要</strong> です。</p>
-
-<p>以上、2017/03/30 の TIL でした。</p>
+<p>やはり普段使っているエディタを使うのが慣れるのも早く、導入もスムーズでいいですね。
+atom は新しい言語のシンタックスハイライトやリンターなどに代表されるように、様々なパッケージが常に作られていて、それを手軽にインストールすることができるので便利です。
+まともなエディタならみんなそうだと言われてしまうとその通りだと思いますが、私はやっぱり atom が一番慣れているのでw</p>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
+    <a href="https://7coco.github.io/post/java_interface/"><i class="fa fa-chevron-left"></i></a>
+    
   </div>
   <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://7coco.github.io/post/java_interface/">Java の抽象クラス・インターフェイスについて</a>
+    </nav>
     
   </div>
   <div class="pure-u-2-24">
@@ -307,13 +317,13 @@ Java では文字列中で <code>\</code> を表すには <code>\</code> を用�
   <div class="pure-u-10-24">
     
     <nav class="next">
-      <a href="https://7coco.github.io/post/emacsoneclipse/">EclipseでEmacsキーバインドが使えなくなった</a>
+      <a href="https://7coco.github.io/post/git_fixup/">git commit --fixup</a>
     </nav>
     
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
     
-    <a href="https://7coco.github.io/post/emacsoneclipse/"><i class="fa fa-chevron-right"></i></a>
+    <a href="https://7coco.github.io/post/git_fixup/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>
