@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 7coco Tech Blog</title>
-    <link>https://7coco.github.io/post/</link>
-    <description>Recent content in Posts on 7coco Tech Blog</description>
+    <title>正規表現 on 7coco Tech Blog</title>
+    <link>https://7coco.github.io/tags/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE/</link>
+    <description>Recent content in 正規表現 on 7coco Tech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
     <lastBuildDate>Thu, 30 Mar 2017 14:27:49 +0900</lastBuildDate>
     
-	<atom:link href="https://7coco.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://7coco.github.io/tags/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

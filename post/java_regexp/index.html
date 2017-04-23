@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.20.1" />
 
-  <title>About &middot; 7coco Tech Blog</title>
+  <title>Java の正規表現でぶつかった &middot; 7coco Tech Blog</title>
 
   
   
@@ -36,8 +36,6 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
   
-  
-  <link rel="alternate" type="application/rss+xml" title="7coco Tech Blog" href="https://7coco.github.io/tags/about/index.xml" />
   
 
   
@@ -97,10 +95,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://7coco.github.io/tags/about/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -204,20 +198,16 @@
 
 
 <div class="header">
-  <h1>About</h1>
+  <h1>Java の正規表現でぶつかった</h1>
+  <h2></h2>
 </div>
-
 <div class="content">
-  
-    <article>
-  <header>
-    <h2><a href="https://7coco.github.io/about/">このブログを書いている人について</a></h2>
 
-    <div class="post-meta">
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>22 Apr 2017, 13:38</time>
+    <time>30 Mar 2017, 14:27</time>
   </div>
 
   
@@ -228,7 +218,7 @@
   <div>
     <i class="fa fa-folder fa-fw"></i>
     
-      <a class="post-taxonomy-topic" href="https://7coco.github.io/topics/"></a>&nbsp;&#47;
+      <a class="post-taxonomy-topic" href="https://7coco.github.io/topics/til">TIL</a>&nbsp;&#47;
     
       <a class="post-taxonomy-topic" href="https://7coco.github.io/topics/"></a>
     
@@ -242,9 +232,9 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/about">about</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/java">Java</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/me">me</a>
+      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE">正規表現</a>
     
   </div>
   
@@ -252,43 +242,94 @@
 
 </div>
 
-  </header>
+  
 
-  <p>
-  About me 誰？ 名前：7coco (ナナココ、もしくはセブンココ、もしくは単にココ)
-生年月日：1998年6月20日 (18歳)
-職業：Webエンジニア
-所属：株式会社マネーフォワード 開発推進本部
-twitter：@7__coco, GitHub：@7coco
-経歴 学芸大附属 =&gt; 早稲田実業 =&gt; N高等学校 =&gt; マネーフォワードに就職 どんなエンジニア？ プログラミング始めて1年です。
-JavaScript(Node.js), Ruby(Ruby on Rails)を書いてきて、就職して Java を始めました。
-会社では Java を用いたアカウントアグリゲーションや Rails を使ったサーバーサイドプログラミングをしています。
-趣味 水泳 0歳から水泳を始めて、9歳の頃に高井戸SCの選手として選手登録、10歳でイトマンへ。以後イトマンの選手として活動していました。
-受験勉強や入院を経て17歳で選手を引退しましたが、今でも泳ぐことは大好きです。
-音楽 小さい頃ピアノを習っていて、すぐにやめましたが今でも趣味でよく弾きます。
-高校時代にはキーボーディストとしてバンドも組んでいました。
-弾くだけでなく聴くのも大好きで、特に fusion が好きです。中でもT-SQUAREが神だと思っています。
-最近もう一度バンドを組みたいと思っているのでもし「一緒に組もうよ！」という方がいらっしゃればぜひ Contact からお声掛けください。
-Bot作り 思いっきりどう見ても機械なんだけどちょっと生き物っぽいものが大好きで、暇な時は自分で bot を作って愛でています。
-FAQ 1. どうしてプログラミング始めたの？ なんか記事書く
-2. なんで大学行かなかったの？ なんか記事書くかも
-3. N高等学校って何？ ざっくり言うと、角川ドワンゴが作った2016年にはじめったネットの高校です。きちんと国の認可を受けた通信制高校で、一般的な高校と同じ高校卒業資格の取得が可能です。
-年に数日のスクーリングを除いて授業はすべてネット上で行われるため、一般的な高校と比べて圧倒的に自由な時間が得られるのがいいところ。学費も安い。
-詳しくはこちら 。
-4. バンタンプログラマーズハイレベルハイスクールって何？ 普通の高校生に比べて時間があるN高等学校の生徒は、N高等学校が提携している様々な学校に通う権利があります。
-提携学校には、パティシエや調理師、小説家を目指したり、東大生を目指したりする学校など、様々な専門的な学習ができる学校があります。
-その中に1年間で即戦力のエンジニアを育てる学校があって、そればバンタンプログラマーズハイレベルハイスクールです。
-詳しくはこちら
-  </p>
+<h1 id="03-30のtil">03/30のTIL</h1>
+
+<h2 id="では早速本日のtil">では早速本日のTIL</h2>
+
+<h3 id="ぶつかったこと">ぶつかったこと</h3>
+
+<p>Java を書く中で正規表現で文字の &ldquo;[&rdquo; や &ldquo;]&rdquo; にマッチさせたいと思って、頭の中でこんな感じに思い浮かべました。</p>
+
+<pre><code> Pattern.compile(&quot;[[]]&quot;);
+</code></pre>
+
+<p>いやいやこれじゃメタ文字の <code>[]</code> になっちゃうよと思い、実際にはこう書きました。</p>
+
+<pre><code>Pattern.compile(&quot;[\[\]]&quot;);
+</code></pre>
+
+<p>ただしこれは
+&gt; Invalid escape sequence (valid ones are  \b  \t  \n  \f  \r  \&rdquo;  \&rsquo;  \ )</p>
+
+<p>と言われます。
+「ん？じゃあエスケープしなくていいの？」と思い、最初に頭に思い浮かべたものを書くと、今度はコンパイルできました。
+ところが、実行してみるとこう言われます。</p>
+
+<blockquote>
+<p>Exception in thread &ldquo;main&rdquo; java.util.regex.PatternSyntaxException: Unclosed character class near index 3</p>
+</blockquote>
+
+<h3 id="解決法">解決法</h3>
+
+<p>結論としてはこうすれば動きます。</p>
+
+<pre><code>Pattern.compile(&quot;[\\[\\]]&quot;);
+</code></pre>
+
+<h3 id="自分なりに解説">自分なりに解説</h3>
+
+<p><code>[]</code> のままでは文字ではなく正規表現のメタ文字として評価されてしまうというのは正しかったです。
+ただ、ならば  <code>\</code> でエスケープして <code>\[\]</code> とすればいいかというとそれだけではダメです。
+Java では文字列中で <code>\</code> を表すには <code>\</code> を用いてエスケープする必要があるからです。
+結果として <code>\\[\\]</code> になります。
+もちろん、<code>[</code> <code>]</code> に限らず、正規表現内でエスケープが必要な文字は全て、 <strong>正規表現のエスケープとしての <code>\</code> と Java の文字列のエスケープとしての <code>\</code> の二つが必要</strong> です。</p>
+
+<p>以上、2017/03/30 の TIL でした。</p>
+
 
   
-  <footer>
-    <a href="https://7coco.github.io/about/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
 
   
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'https-7coco-github-io';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
 </div>
 
 </div>
@@ -300,3 +341,4 @@ FAQ 1. どうしてプログラミング始めたの？ なんか記事書く
 
 </body>
 </html>
+

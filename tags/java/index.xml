@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 7coco Tech Blog</title>
-    <link>https://7coco.github.io/post/</link>
-    <description>Recent content in Posts on 7coco Tech Blog</description>
+    <title>Java on 7coco Tech Blog</title>
+    <link>https://7coco.github.io/tags/java/</link>
+    <description>Recent content in Java on 7coco Tech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
     <lastBuildDate>Thu, 30 Mar 2017 14:27:49 +0900</lastBuildDate>
     
-	<atom:link href="https://7coco.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://7coco.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
