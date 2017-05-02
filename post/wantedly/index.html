@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.20.1" />
 
-  <title>git commit --fixup &middot; 7coco Tech Blog</title>
+  <title>5日間の超短期、スピードインターン！ @Wantedly &middot; 7coco Tech Blog</title>
 
   
   
@@ -202,7 +202,7 @@
 
 
 <div class="header">
-  <h1>git commit --fixup</h1>
+  <h1>5日間の超短期、スピードインターン！ @Wantedly</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -211,7 +211,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>14 Apr 2017, 14:56</time>
+    <time>02 May 2017, 09:09</time>
   </div>
 
   
@@ -222,7 +222,7 @@
   <div>
     <i class="fa fa-folder fa-fw"></i>
     
-      <a class="post-taxonomy-topic" href="https://7coco.github.io/topics/til">TIL</a>&nbsp;&#47;
+      <a class="post-taxonomy-topic" href="https://7coco.github.io/topics/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%B3%E4%BD%93%E9%A8%93%E8%AB%87">インターン体験談</a>&nbsp;&#47;
     
       <a class="post-taxonomy-topic" href="https://7coco.github.io/topics/"></a>
     
@@ -236,7 +236,7 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/git">git</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%B3">インターン</a>&nbsp;&#47;
     
       <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/"></a>
     
@@ -248,52 +248,60 @@
 
   
 
-<h1 id="本日のtil">本日のTIL</h1>
+<h1 id="当時の記録をそのまま転記">当時の記録をそのまま転記</h1>
 
-<h2 id="ぶつかったこと">ぶつかったこと</h2>
+<h2 id="やったこと">やったこと</h2>
 
-<p>仕事でコードを書いてレビューをお願いしたら、上司から二つ前のコミットを変えるように言われました。
-「<code>--fixup</code> を使うといいよ！」と言われたのですが、そのオプションを知らなかったのでググってみました。</p>
+<p>以前 Wantedly で行われたイベントに参加した関係でご縁が生まれ、Wantedly で短期インターン ( なんと5日間 ) を行うことになりました。</p>
 
-<h2 id="解決法">解決法</h2>
+<p>配属されたのは Wantedly feed チームです。5日間このチームで何をやるのかを決めるところからスタートしました。</p>
 
-<p>普通にコミットするときに既存のコミットを下のように指定します。</p>
+<p>「何やりたい？」と聞かれて、私は1ユーザーとして Wantedly, 特にフィードにどうなってほしいかを考えました。
+そこで私が注目したのは「フィードを長い間投稿していない企業には応募しづらいなあ。」という自分自身の感想です。
+フィードを長い間、例えば1年以上更新していないと、<br>
+「フィードにあるような魅力的な事柄は1年経った今はもうなくなっているかもしれない」<br>
+「そもそも本気で採用活動していないのかも」<br>
+などと考えて応募ボタンを押すのを躊躇ってしまうのです。</p>
 
-<pre><code>git commit --fixup HEAD~1
-</code></pre>
+<p>そこで今回のインターンでは、この意見が多数のユーザーの意見であることをデータからきちんと数字として出し、一定期間フィードを投稿していない企業に対して投稿を勧めるような施策を行うことになりました。</p>
 
-<p>こうすると指定されたコミットメッセージの先頭に &ldquo;fixup! &rdquo; がついたコミットになります。</p>
+<h2 id="課題に感じたこと">課題に感じたこと</h2>
 
-<p>そして、この状態で <code>--autosquash</code> というオプションをつけて <code>rebase -i</code> します。</p>
+<p>データを集計してグラフにする。<br>
+実は、私にとって数学の授業以外では初めての経験でした。<br>
+集計対象のデータベースは PostgreSQL と BigQuery の二種類ありましたがどちらも今まで目の前にした中では飛び抜けて巨大なもので、欲しい情報を正確に取得するためのクエリの組み立てにかなりの時間を要しました。</p>
 
-<pre><code>git rebase -i --autosquash HEAD~2
-</code></pre>
+<p>さらに、「どのくらいのNがあればデータとして成り立つのか」「どういうグラフを作るのか」「そもそもどうやってグラフにするの」などとかなり基本的かつ根本的な問題に悩まされました。</p>
 
-<p>すると、エディタが開きますが、とりあえず何も考えず内容を保存して終了してみましょう ( エディタが開いた段階で指定したコミットと&rdquo;fixup!&rdquo; がついたコミットがまとめられるようになっています )。
-これで、 &ldquo;fixup!&rdquo; のついたコミットと指定したコミットが一つにまとまります ( コミットメッセージには &ldquo;fixup!&rdquo; はつきません ) 。</p>
+<h2 id="収穫できたこと">収穫できたこと</h2>
 
-<p>ちなみに、 <code>--autosquash</code> というのは長いですね。いちいちオプションをつけるのは面倒です。
-エイリアスを設定してもいいのですが、下記のように設定するといつでも rebase をするときに <code>--autosquash</code> をつけたのと同じことになります。<code>--autosquash</code> オプションをつけて頻繁に rebase する場合はぜひ下記のコマンドを叩きましょう。</p>
+<p>5日間という短期間でしたがなんとかやりきることはできました。<br>
+新しい技術、知識に触れることももちろんできました ( 毎日触れすぎてやばかった ) が、収穫できたことの中で一番大きなことは「仕事」で実装するものが出す「数字」に少しでも触れられたことだと思います。</p>
 
-<pre><code>git config --global rebase.autosquash true
-</code></pre>
+<p>Wantedly の社員の方が仰っていたことをそのまま書かせていただきますが、どんなにきれいなコードで書かれていても、その機能がユーザーにとって良いものでなければ意味はありません。時には膨大な時間と労力を割いて実装した機能が売り上げに全く貢献しないこともあるかもしれません。</p>
 
-<h2 id="まとめ">まとめ</h2>
+<p>「仕事」でコードを書く以上、「数字」がついてこないとどうしようもない。</p>
 
-<p>便利なオプションがあったんだなあ。というお気持ちです。はい。</p>
+<p>そんな世界に少しでも触れさせてもらえたことで、これからその世界に入って行こうとしている自分に足りないものは何なのか、これからどうするべきなのかを真剣に考えることができるようになりました。</p>
+
+<p>繰り返しますが、5日間という短期間。けれど、この期間は非常に濃密で、得た経験は貴重なものでした。</p>
+
+<p>このようにまとめると勘違いされてしまうかもしれないと思ったので最後に言っておきます。</p>
+
+<p>私は怖気付いたわけではありません。結果の出せる、やってやれるエンジニアに、必ずなります！</p>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://7coco.github.io/post/edit_csv/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://7coco.github.io/post/crowdworks/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://7coco.github.io/post/edit_csv/">Mac で CSV を編集するときの個人的イチオシツール</a>
+      <a href="https://7coco.github.io/post/crowdworks/">自分らしく働ける場所を探して @CrowdWorks</a>
     </nav>
     
   </div>
@@ -302,14 +310,8 @@
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="https://7coco.github.io/post/animatelab/">Animatelab での初めての実務経験</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://7coco.github.io/post/animatelab/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>

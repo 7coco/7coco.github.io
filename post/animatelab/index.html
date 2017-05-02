@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.20.1" />
 
-  <title>git commit --fixup &middot; 7coco Tech Blog</title>
+  <title>Animatelab での初めての実務経験 &middot; 7coco Tech Blog</title>
 
   
   
@@ -202,7 +202,7 @@
 
 
 <div class="header">
-  <h1>git commit --fixup</h1>
+  <h1>Animatelab での初めての実務経験</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -211,7 +211,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>14 Apr 2017, 14:56</time>
+    <time>02 May 2017, 09:04</time>
   </div>
 
   
@@ -222,7 +222,7 @@
   <div>
     <i class="fa fa-folder fa-fw"></i>
     
-      <a class="post-taxonomy-topic" href="https://7coco.github.io/topics/til">TIL</a>&nbsp;&#47;
+      <a class="post-taxonomy-topic" href="https://7coco.github.io/topics/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%B3%E4%BD%93%E9%A8%93%E8%AB%87">インターン体験談</a>&nbsp;&#47;
     
       <a class="post-taxonomy-topic" href="https://7coco.github.io/topics/"></a>
     
@@ -236,7 +236,7 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/git">git</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%B3">インターン</a>&nbsp;&#47;
     
       <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/"></a>
     
@@ -248,52 +248,52 @@
 
   
 
-<h1 id="本日のtil">本日のTIL</h1>
+<h1 id="当時の記録をそのまま転記">当時の記録をそのまま転記</h1>
 
-<h2 id="ぶつかったこと">ぶつかったこと</h2>
+<h2 id="やったこと">やったこと</h2>
 
-<p>仕事でコードを書いてレビューをお願いしたら、上司から二つ前のコミットを変えるように言われました。
-「<code>--fixup</code> を使うといいよ！」と言われたのですが、そのオプションを知らなかったのでググってみました。</p>
+<p>動画配信サービスアニメイトチャンネルの開発、保守に携わるエンジニアチームの一員としてアルバイトを始めました。</p>
 
-<h2 id="解決法">解決法</h2>
+<p>学校で得たバックエンドの知識を実務経験を通じてさらに伸ばしていきたいと思い、アルバイトに応募しました。</p>
 
-<p>普通にコミットするときに既存のコミットを下のように指定します。</p>
+<p>面接などでは自分のサーバーサイドプログラミングの知識について重点的にアピールしたため、サーバーサイドのタスクが多く割り振られることを予想していましたが、少人数のチームであることもあってフロントエンドのSlim, Sass, JS も担当しました。</p>
 
-<pre><code>git commit --fixup HEAD~1
-</code></pre>
+<p>バックエンドからフロントエンドまで様々なタスクをこなし、ステージングデプロイや本番デプロイも行うようになりました。</p>
 
-<p>こうすると指定されたコミットメッセージの先頭に &ldquo;fixup! &rdquo; がついたコミットになります。</p>
+<h2 id="課題に感じたこと">課題に感じたこと</h2>
 
-<p>そして、この状態で <code>--autosquash</code> というオプションをつけて <code>rebase -i</code> します。</p>
+<p>学校でのチーム開発などでは自分がバックエンドが得意ということでサーバーサイドを中心に書いており、フロントを他のメンバーに任せることが多かったです。<br>
+そのため、フロントエンドに関する圧倒的な知識不足を感じました。<br>
+特に、端末によって生じる細かな挙動の違いなどに悩まされました。</p>
 
-<pre><code>git rebase -i --autosquash HEAD~2
-</code></pre>
+<p>これらはある程度は調べて身につく知識だとは思いますが、実務レベルでの対応技術は実際に自分で踏んでみて初めて身につくものだと思いますので、今後もっともっと経験を積んでいきたいです。</p>
 
-<p>すると、エディタが開きますが、とりあえず何も考えず内容を保存して終了してみましょう ( エディタが開いた段階で指定したコミットと&rdquo;fixup!&rdquo; がついたコミットがまとめられるようになっています )。
-これで、 &ldquo;fixup!&rdquo; のついたコミットと指定したコミットが一つにまとまります ( コミットメッセージには &ldquo;fixup!&rdquo; はつきません ) 。</p>
+<p>「バックエンドのほうが得意、好き、やりたい」という思いは今でも変わりませんが、突然何らかの関係でフロントのタスクを担当することはあると思いますので、その辺りの力も身につけていきたいです。</p>
 
-<p>ちなみに、 <code>--autosquash</code> というのは長いですね。いちいちオプションをつけるのは面倒です。
-エイリアスを設定してもいいのですが、下記のように設定するといつでも rebase をするときに <code>--autosquash</code> をつけたのと同じことになります。<code>--autosquash</code> オプションをつけて頻繁に rebase する場合はぜひ下記のコマンドを叩きましょう。</p>
+<h2 id="収穫できたこと">収穫できたこと</h2>
 
-<pre><code>git config --global rebase.autosquash true
-</code></pre>
+<p>GitFlowでの実務レベルでの開発経験を積めたことから、PRの精度が格段に上がったと思います。</p>
 
-<h2 id="まとめ">まとめ</h2>
+<p>Jenkinsを使ったデプロイの経験は初めてのものでしたが、今ではスムーズに行えます。</p>
 
-<p>便利なオプションがあったんだなあ。というお気持ちです。はい。</p>
+<p>上司の方からのレビューを通じて自分のコードの書き方の問題点などを認識し、改善につなげることができました。</p>
+
+<p>また、エンジニアとしてディレクター陣に伝えなくてはならないこと、問題はどこにあるのか、などエンジニアとしてのものの考え方についてもさらに学ぶことができました。</p>
+
+<p>今後もさらに経験を積んで、様々な問題を問題の本質を見極めつつ解決することのできるエンジニアに成長していきたいです。</p>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://7coco.github.io/post/edit_csv/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://7coco.github.io/post/git_fixup/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://7coco.github.io/post/edit_csv/">Mac で CSV を編集するときの個人的イチオシツール</a>
+      <a href="https://7coco.github.io/post/git_fixup/">git commit --fixup</a>
     </nav>
     
   </div>
@@ -303,13 +303,13 @@
   <div class="pure-u-10-24">
     
     <nav class="next">
-      <a href="https://7coco.github.io/post/animatelab/">Animatelab での初めての実務経験</a>
+      <a href="https://7coco.github.io/post/crowdworks/">自分らしく働ける場所を探して @CrowdWorks</a>
     </nav>
     
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
     
-    <a href="https://7coco.github.io/post/animatelab/"><i class="fa fa-chevron-right"></i></a>
+    <a href="https://7coco.github.io/post/crowdworks/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>

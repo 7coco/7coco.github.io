@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 23 Apr 2017 13:35:19 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 02 May 2017 09:09:19 +0900</lastBuildDate>
     
 	<atom:link href="https://7coco.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title></title>
       <link>https://7coco.github.io/tags/</link>
-      <pubDate>Sun, 23 Apr 2017 13:35:19 +0900</pubDate>
+      <pubDate>Tue, 02 May 2017 09:09:19 +0900</pubDate>
       
       <guid>https://7coco.github.io/tags/</guid>
       <description></description>
@@ -81,6 +81,15 @@
       <pubDate>Sat, 22 Apr 2017 13:38:18 +0900</pubDate>
       
       <guid>https://7coco.github.io/tags/me/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>インターン</title>
+      <link>https://7coco.github.io/tags/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%B3/</link>
+      <pubDate>Tue, 02 May 2017 09:09:19 +0900</pubDate>
+      
+      <guid>https://7coco.github.io/tags/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%B3/</guid>
       <description></description>
     </item>
     
