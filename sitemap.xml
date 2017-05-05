@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://7coco.github.io/post/animatelab/</loc>
+    <lastmod>2017-05-02T09:04:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://7coco.github.io/contact/</loc>
     <lastmod>2017-04-23T13:35:19+09:00</lastmod>
   </url>
@@ -57,13 +62,13 @@
   </url>
   
   <url>
-    <loc>https://7coco.github.io/tags/</loc>
+    <loc>https://7coco.github.io/topics/</loc>
     <lastmod>2017-05-02T09:09:19+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://7coco.github.io/topics/</loc>
+    <loc>https://7coco.github.io/tags/</loc>
     <lastmod>2017-05-02T09:09:19+09:00</lastmod>
     <priority>0</priority>
   </url>
