@@ -216,6 +216,67 @@
   
     <article>
   <header>
+    <h2><a href="https://7coco.github.io/post/oauth2/">OAuth2.0 についてのまとめ</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>14 May 2017, 15:34</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://7coco.github.io/topics/"></a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="https://7coco.github.io/topics/"></a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/oauth2">OAuth2</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/"></a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  account_web に携わるにあたって必要になるとのことで、 OAuth2.0 について調べたことのまとめです。
+今回のまとめで触れるもの、触れないもの。 今回のまとめにおいて、主に触れるのはOAuth2.0のプロトコルフローについてです。 なお、プロトコルフローは下記のような6ステップに分けることができますが、今回触れるのは1 ~ 4 までとなります ( 5以降は accout_web の仕事ではないため ) 。 1. クライアントが認可を要求 1. クライアントが認可グラントを受け取る 1. クライアントが認可グラントを提示 ( アクセストークンの要求 ) 1. 認可サーバーがクライアントを認証 ( アクセストークンの付与 ) 1. クライアントが保護リソースへアクセス ( アクセストークンでの認証 ) 1. リソースサーバーがアクセストークンを確認 ( リクエストの受け入れ )
+中でも、認可グラントの受け取り ( 2 ) については認可コードフローのみについてまとめています。
+従来のクライアントサーバー型認証やOAuth1.0, クライアントクレデンシャル、インプリシット、リソースオーナーパスワードクレデンシャルについては今回触れません。
+登場人物紹介 ( 用語集 ) もうすでに重要な登場人物が出てきていますが、ここで改めて登場人物の紹介を行います。 仕様書を読んだ個人の主観に基づいたざっくりな説明です。 ##リソースオーナー ( Resource Owner ) 保護リソースへのアクセスを許可するエンティティ ( 人間だったらエンドユーザーと呼ばれる ) 。 この人がリソースを持っているので、それがほしい人はみんなこの人に直接「ちょうだい！」って言う ( 認可要求する ) のかと思いきやそうではない ( できるけど望ましくない ) 。
+  </p>
+
+  
+  <footer>
+    <a href="https://7coco.github.io/post/oauth2/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
     <h2><a href="https://7coco.github.io/post/wantedly/">5日間の超短期、スピードインターン！ @Wantedly</a></h2>
 
     <div class="post-meta">
@@ -347,6 +408,8 @@ http://qiita.com/suzan2go/items/445e8428a209892b521d
 ユーザーの方をお招きした座談会を催すなどユーザーの意見によく耳を傾けるための施策についても積極的で自分たちのサービスがどのような形で今社会に貢献しているのか、これからどうなる事が望まれているのかが直接的に伝わってとてもやりがいを感じる事ができました。
 二週間という短期間でしたがとても楽しかったですし、将来はこんな風に働きたいと心の底から思いました。
 クラウドワークスの皆さんのように自分のプロダクトに誇り持って開発ができるエンジニアになれるようにこれからも精進していこうと思います！
+就職してから当時を振り返って Ruby や Rails が好きになった 二週間という短い期間のインターンでしたが、この期間の間に Rails が好きになりました。
+「それまで好きじゃなかったの？」という問いに答えると、答えは YES です。
   </p>
 
   
@@ -805,71 +868,20 @@ Eclipse の keys 設定を見に行くと scheme は Emacs になっているし
 </article>
 
   
-    <article>
-  <header>
-    <h2><a href="https://7coco.github.io/post/java_regexp/">Java の正規表現でぶつかった</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>30 Mar 2017, 14:27</time>
-  </div>
 
   
 
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="https://7coco.github.io/topics/til">TIL</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-topic" href="https://7coco.github.io/topics/"></a>
-    
-  </div>
-  
-  
 
+<nav class="pagination" role="pagination">
   
+  <i class="fa fa-chevron-left"></i>
   
+  <span>&nbsp;1 / 2&nbsp;</span>
   
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/java">Java</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://7coco.github.io/tags/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE">正規表現</a>
-    
-  </div>
+  <a href="https://7coco.github.io/page/2/"><i class="fa fa-chevron-right"></i></a>
   
-  
+</nav>
 
-</div>
-
-  </header>
-
-  <p>
-  03/30のTIL では早速本日のTIL ぶつかったこと Java を書く中で正規表現で文字の &ldquo;[&rdquo; や &ldquo;]&rdquo; にマッチさせたいと思って、頭の中でこんな感じに思い浮かべました。
- Pattern.compile(&quot;[[]]&quot;);  いやいやこれじゃメタ文字の [] になっちゃうよと思い、実際にはこう書きました。
-Pattern.compile(&quot;[\[\]]&quot;);  ただしこれは &gt; Invalid escape sequence (valid ones are \b \t \n \f \r \&rdquo; \&rsquo; \ )
-と言われます。 「ん？じゃあエスケープしなくていいの？」と思い、最初に頭に思い浮かべたものを書くと、今度はコンパイルできました。 ところが、実行してみるとこう言われます。
- Exception in thread &ldquo;main&rdquo; java.util.regex.PatternSyntaxException: Unclosed character class near index 3
- 解決法 結論としてはこうすれば動きます。
-Pattern.compile(&quot;[\\[\\]]&quot;);  自分なりに解説 [] のままでは文字ではなく正規表現のメタ文字として評価されてしまうというのは正しかったです。 ただ、ならば \ でエスケープして \[\] とすればいいかというとそれだけではダメです。 Java では文字列中で \ を表すには \ を用いてエスケープする必要があるからです。 結果として \\[\\] になります。 もちろん、[ ] に限らず、正規表現内でエスケープが必要な文字は全て、 正規表現のエスケープとしての \ と Java の文字列のエスケープとしての \ の二つが必要 です。
-  </p>
-
-  
-  <footer>
-    <a href="https://7coco.github.io/post/java_regexp/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-
-  
 
 
 </div>

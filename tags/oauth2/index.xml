@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Oauth2 on 7coco Tech Blog</title>
+    <link>https://7coco.github.io/tags/oauth2/</link>
+    <description>Recent content in Oauth2 on 7coco Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 14 May 2017 15:34:40 +0900</lastBuildDate>
+    
+	<atom:link href="https://7coco.github.io/tags/oauth2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>OAuth2.0 についてのまとめ</title>
+      <link>https://7coco.github.io/post/oauth2/</link>
+      <pubDate>Sun, 14 May 2017 15:34:40 +0900</pubDate>
+      
+      <guid>https://7coco.github.io/post/oauth2/</guid>
+      <description>account_web に携わるにあたって必要になるとのことで、 OAuth2.0 について調べたことのまとめです。
+今回のまとめで触れるもの、触れないもの。 今回のまとめにおいて、主に触れるのはOAuth2.0のプロトコルフローについてです。 なお、プロトコルフローは下記のような6ステップに分けることができますが、今回触れるのは1 ~ 4 までとなります ( 5以降は accout_web の仕事ではないため ) 。 1. クライアントが認可を要求 1. クライアントが認可グラントを受け取る 1. クライアントが認可グラントを提示 ( アクセストークンの要求 ) 1. 認可サーバーがクライアントを認証 ( アクセストークンの付与 ) 1. クライアントが保護リソースへアクセス ( アクセストークンでの認証 ) 1. リソースサーバーがアクセストークンを確認 ( リクエストの受け入れ )
+中でも、認可グラントの受け取り ( 2 ) については認可コードフローのみについてまとめています。
+従来のクライアントサーバー型認証やOAuth1.0, クライアントクレデンシャル、インプリシット、リソースオーナーパスワードクレデンシャルについては今回触れません。
+登場人物紹介 ( 用語集 ) もうすでに重要な登場人物が出てきていますが、ここで改めて登場人物の紹介を行います。 仕様書を読んだ個人の主観に基づいたざっくりな説明です。 ##リソースオーナー ( Resource Owner ) 保護リソースへのアクセスを許可するエンティティ ( 人間だったらエンドユーザーと呼ばれる ) 。 この人がリソースを持っているので、それがほしい人はみんなこの人に直接「ちょうだい！」って言う ( 認可要求する ) のかと思いきやそうではない ( できるけど望ましくない ) 。</description>
+    </item>
+    
+  </channel>
+</rss>

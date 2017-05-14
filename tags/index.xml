@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 02 May 2017 09:09:19 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 14 May 2017 15:34:40 +0900</lastBuildDate>
     
 	<atom:link href="https://7coco.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title></title>
       <link>https://7coco.github.io/tags/</link>
-      <pubDate>Tue, 02 May 2017 09:09:19 +0900</pubDate>
+      <pubDate>Sun, 14 May 2017 15:34:40 +0900</pubDate>
       
       <guid>https://7coco.github.io/tags/</guid>
       <description></description>
@@ -81,6 +81,15 @@
       <pubDate>Sat, 22 Apr 2017 13:38:18 +0900</pubDate>
       
       <guid>https://7coco.github.io/tags/me/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Oauth2</title>
+      <link>https://7coco.github.io/tags/oauth2/</link>
+      <pubDate>Sun, 14 May 2017 15:34:40 +0900</pubDate>
+      
+      <guid>https://7coco.github.io/tags/oauth2/</guid>
       <description></description>
     </item>
     
